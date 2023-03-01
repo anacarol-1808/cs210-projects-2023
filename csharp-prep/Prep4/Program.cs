@@ -20,25 +20,42 @@ class Program
 
         // Compute the sum, or total, of the numbers in the list.
 
-        int sum = 0;
-        int i = 0;
+        float sum = 0;
+        float total = 0;
 
         foreach (string word in numbers)
         {
-            int integer = int.Parse(word);
+            float integer = float.Parse(word);
             sum += integer;
-            i++;
+            total++;
         }
 
         Console.WriteLine($"The sum is: {sum}");
 
         // Compute the average of the numbers in the list.
 
-        int average = sum / (i - 1);
+        float average = sum / (total - 1);
 
         Console.WriteLine($"The average  is: {average}");
 
         // Find the maximum, or largest, number in the list.
+        int bigger = -99999999;
+        int numberBefore = -999999999;
+
+
+        for (int i = 0; i < numbers.Count; i++)
+        {
+            int actualNumber = int.Parse(numbers[i]);
+
+            if (actualNumber > numberBefore)
+            {
+                bigger = actualNumber;
+                numberBefore = actualNumber;
+            }
+
+        }
+
+        Console.WriteLine($"The largest number is: {bigger}");
 
     }
 }
