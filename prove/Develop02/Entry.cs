@@ -7,9 +7,9 @@ class Entry
     //constructor
     public Entry(string aDate, string aPrompt, string aAnswer)
     {
-        _date = aDate;
+        /*_date = aDate;
         _prompt = aPrompt;
-        _answer = aAnswer; 
+        _answer = aAnswer; */
     }
 
     public void DisplayEntry(string _date, string _prompt, string _answer)
@@ -25,7 +25,5 @@ class Entry
     {
         return "";
     }
-
-
     
 }
