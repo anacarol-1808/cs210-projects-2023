@@ -1,0 +1,4 @@
+Date: |3/7/2023|Prompt: |Did I served someone today?|Answer: |test1
+Date: |3/7/2023|Prompt: |What negative thought I had today and how could I turned it to be more positive?|Answer: |test2
+Date: |3/7/2023|Prompt: |How did I see the hand of the Lord in my life today?|Answer: |test3
+Date: |3/7/2023|Prompt: |If I had one thing I could do over today, what would it be?|Answer: |test4
