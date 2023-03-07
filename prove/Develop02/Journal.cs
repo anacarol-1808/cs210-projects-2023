@@ -1,24 +1,24 @@
 class Journal
 {
-    List<Entry> entries;
+    List<Entry> _entries;
     
     //constructor
     public Journal()
     {
-        entries = new List<Entry>();
+        _entries = new List<Entry>();
     }
 
     public void CreateJournalEntry(Entry entry)
     {
-        entries.Add(entry);
+        _entries.Add(entry);
     }
 
-    public void SaveToFile(string fileName)
+    public void SaveToFile(string _fileName)
     {
-        using (StreamWriter outputFile = new StreamWriter(fileName/*, append:true*/))
+        using (StreamWriter outputFile = new StreamWriter(_fileName/*, append:true*/))
         {   
 
-            foreach(Entry item in entries)
+            foreach(Entry item in _entries)
             {   
                 outputFile.WriteLine($"Date: |{item._date}|Prompt: |{item._prompt}|Answer: |{item._answer}");
             }
@@ -26,10 +26,10 @@ class Journal
         }
     }
 
-    public void LoadFromFile(string fileName)
+    public void LoadFromFile(string _fileName)
     {
-        entries.Clear();
-        string[] lines = System.IO.File.ReadAllLines(fileName);
+        _entries.Clear();
+        string[] lines = System.IO.File.ReadAllLines(_fileName);
 
         foreach (string line in lines)
         { 
@@ -37,7 +37,7 @@ class Journal
             if (parts[0] != "")
             {
                 Entry entry = new Entry(parts[1], parts[3], parts[5]);
-                entries.Add(entry);
+                _entries.Add(entry);
             }
             
         }
@@ -46,7 +46,7 @@ class Journal
 
     public void DisplayJournalEntries()
     {   
-        foreach(var item in entries)
+        foreach(var item in _entries)
         {   
             Console.WriteLine();
             Console.WriteLine($"Date: {item._date} - Prompt: {item._prompt}");
