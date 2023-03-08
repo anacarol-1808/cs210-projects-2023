@@ -6,7 +6,7 @@ class Program
     static void Main(string[] args)
     {
         // Journal Menu
-        PromptGenerator prompt = new PromptGenerator();
+        
         Journal journal = new Journal();
         string option = "";
         string fileName = "";
@@ -24,16 +24,8 @@ class Program
             option = Console.ReadLine();
             
             if (option == "1")
-            {   
-                Entry entry = new Entry("", "", "");
-                entry._prompt = prompt.GetRandomQuestion();
-                Console.WriteLine(entry._prompt);
-                Console.Write("> ");
-                entry._answer = Console.ReadLine();
-                DateTime now = DateTime.Now;
-                entry._date = now.ToShortDateString();           
-                
-                journal.CreateJournalEntry(entry);    
+            {    
+                journal.CreateJournalEntry();    
             }
 
             else if (option == "2")

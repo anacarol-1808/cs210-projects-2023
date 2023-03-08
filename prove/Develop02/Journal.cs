@@ -8,8 +8,16 @@ class Journal
         _entries = new List<Entry>();
     }
 
-    public void CreateJournalEntry(Entry entry)
+    public void CreateJournalEntry()
     {
+        PromptGenerator promptGenerator = new PromptGenerator();
+        string prompt = promptGenerator.GetRandomQuestion();
+        Console.WriteLine(prompt);
+        Console.Write("> ");
+        string answer = Console.ReadLine();
+        DateTime now = DateTime.Now;
+        string date = now.ToShortDateString(); 
+        Entry entry = new Entry(date, prompt, answer);
         _entries.Add(entry);
     }
 
@@ -46,10 +54,10 @@ class Journal
 
     public void DisplayJournalEntries()
     {   
-        foreach(var item in _entries)
+        foreach(Entry item in _entries)
         {   
             Console.WriteLine();
-            Console.WriteLine($"Date: {item._date} - Prompt: {item._prompt}");
+            Console.WriteLine("Date: {0} - Prompt: {1}", item._date, item._prompt);
             Console.WriteLine(item._answer);
         }
     }
