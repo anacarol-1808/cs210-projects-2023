@@ -4,26 +4,26 @@ class Program
 {
     static void Main(string[] args)
     {
-        // create an instance for 1/1 (using the first constructor)
+        // Verify that you can call each constructor and that you can retrieve and display the different representations for a few different fractions. 
+        // For example, you could try: 1, 5, 3/4, 1/3
+
         var fraction = new Fraction();
-        fraction.GetFraction();
-
-        // for 6/1 (using the second constructor)
-        var fraction1 = new Fraction(6);
-        fraction1.GetFraction();
-
-        // for 6/7 (using the third constructor)
-        var fraction2 = new Fraction(6 , 7);
-        fraction2.GetFraction();
-
-        fraction.SetTop(8);
-        Console.WriteLine(fraction.GetTop());
-
-        fraction.SetBottom(10);
-        fraction.GetFraction();
-        Console.WriteLine(fraction.GetBottom());
-
         Console.WriteLine(fraction.GetFractionString());
         Console.WriteLine(fraction.GetDecimalValue());
+
+        var fraction1 = new Fraction(5);
+        Console.WriteLine(fraction1.GetFractionString());
+        Console.WriteLine(fraction1.GetDecimalValue());
+
+        var fraction2 = new Fraction(3, 4);
+        Console.WriteLine(fraction2.GetFractionString());
+        Console.WriteLine(fraction2.GetDecimalValue());
+
+        var fraction3 = new Fraction(1, 3);
+        Console.WriteLine(fraction3.GetFractionString());
+        Console.WriteLine(fraction3.GetDecimalValue());
+
+
+
     }
 }
