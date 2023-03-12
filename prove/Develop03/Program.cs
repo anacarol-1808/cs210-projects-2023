@@ -4,6 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop03 World!");
+        /*Scripture scripture = new Scripture();
+        Console.WriteLine(scripture.DisplayFullScripture());
+        scripture.CreateListOfWords(); 
+
+        Word word = new Word();
+        Console.ReadLine();
+        Console.Clear();
+        word.EraseRandomWords();*/
+
     }
 }
