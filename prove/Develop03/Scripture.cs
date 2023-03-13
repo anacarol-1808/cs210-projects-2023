@@ -1,4 +1,4 @@
-/*public class Scripture
+public class Scripture
 {
 
     List<string> _words;
@@ -42,4 +42,4 @@
 
 
 
-}*/
+}

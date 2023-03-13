@@ -1,4 +1,4 @@
-/*public class Word
+public class Word
 {
 
     public Word()
@@ -46,4 +46,4 @@
         words = newWords;
 
     }
-}*/
+}
