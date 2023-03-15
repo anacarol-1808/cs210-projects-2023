@@ -1,26 +1,62 @@
 public class Word
 {
+    // attributes
+    private string _wordText;
+    private bool _isHidden = false;
 
-    public Word()
+    // constructor
+    public Word(string wordText)
     {
-
+        _wordText = wordText;
     }
 
-    Scripture listOfWords = new Scripture();
-    List<string> words = new List<string>();
-    List<string> newWords = new List<string>();
-
-    private int rand_num1;
-    private int rand_num2;
-    private int rand_num3;
-    static  Random rnd = new Random();
-    public void EraseRandomWords()
+    // methods
+    public void HideWord()
     {
-        words = listOfWords.CreateListOfWords();
-            
-            rand_num1 = rnd.Next(words.Count);
-            rand_num2 = rnd.Next(words.Count);
-            rand_num3 = rnd.Next(words.Count);
+        _wordText = new String('_', _wordText.Length);
+        _isHidden = true;
+    }
+
+    public string getWord()
+    {
+        return _wordText;
+    }
+
+    public void displayWord()
+    {
+        Console.WriteLine(_wordText);
+    }
+
+    /*pulbic void isHidden()
+    {
+
+    }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*public void EraseRandomWords()
+    {
+        //words = listOfWords.CreateListOfWords();
+            Random rnd = new Random();
+            int rand_num1 = rnd.Next(words.Count);
+            int rand_num2 = rnd.Next(words.Count);
+            int rand_num3 = rnd.Next(words.Count);
 
         if (words[rand_num1] == "_____" || words[rand_num2] == "_____" || words[rand_num3] == "_____")
         {
@@ -37,13 +73,7 @@ public class Word
         words[rand_num2] = "_____";
         words[rand_num3] = "_____";
         
-        foreach (string item in words)
-        {
-            newWords.Add(item);
-        }    
+        listOfWords.DisplayMissingWordsScripture(words);
 
-        listOfWords.DisplayMissingWordsScripture(newWords);
-        words = newWords;
-
-    }
+    }*/
 }
