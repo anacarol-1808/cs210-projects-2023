@@ -1,8 +1,9 @@
 public class Word
-{
+{   
+    // Word - Keeps track of a single word and whether it is shown or hidden.
     // attributes
-    private string _wordText;
-    private bool _isHidden = false;
+    public string _wordText;
+    public bool _isHidden = false;
 
     // constructor
     public Word(string wordText)
@@ -17,63 +18,5 @@ public class Word
         _isHidden = true;
     }
 
-    public string getWord()
-    {
-        return _wordText;
-    }
-
-    public void displayWord()
-    {
-        Console.WriteLine(_wordText);
-    }
-
-    /*pulbic void isHidden()
-    {
-
-    }*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*public void EraseRandomWords()
-    {
-        //words = listOfWords.CreateListOfWords();
-            Random rnd = new Random();
-            int rand_num1 = rnd.Next(words.Count);
-            int rand_num2 = rnd.Next(words.Count);
-            int rand_num3 = rnd.Next(words.Count);
-
-        if (words[rand_num1] == "_____" || words[rand_num2] == "_____" || words[rand_num3] == "_____")
-        {
-            do
-            {
-                rand_num1 = rnd.Next(words.Count);
-                rand_num2 = rnd.Next(words.Count);
-                rand_num3 = rnd.Next(words.Count);
-            }
-            while (words[rand_num1] == "_____" || words[rand_num2] == "_____" || words[rand_num3] == "_____");
-        }
-        
-        words[rand_num1] = "_____";
-        words[rand_num2] = "_____";
-        words[rand_num3] = "_____";
-        
-        listOfWords.DisplayMissingWordsScripture(words);
-
-    }*/
+    
 }
