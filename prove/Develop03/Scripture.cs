@@ -62,7 +62,7 @@ public class Scripture
         Console.Write($"{_reference.GetReference()} ");
         foreach (Word item in _wordsList)
         {
-            Console.Write($"{item.getWordText()} ");
+            Console.Write($"{item.GetWordText()} ");
         }
         Console.WriteLine("");
         Console.WriteLine("");
