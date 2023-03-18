@@ -1,23 +1,24 @@
 public class Scripture 
 {
-    // Scripture - Keeps track of the reference and the text of the scripture. Can hide words and get the rendered display of the text.
+    // Scripture Class - Keeps track of the reference and the text of the scripture. Can hide words and get the rendered display of the text.
+
+    // attributes here
     private string _scriptureText = "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.";
     private Reference _reference = new Reference();
-    public List<Word> _wordsList = new List<Word>();
+    private List<Word> _wordsList = new List<Word>();
 
 
-    // constructor here
+    // constructors here
     public Scripture()
     {
         
     }
     
 
-    // Methods here
+    // methods here
 
-    // Find the words that are in the scripture
-    // Split into array of words
-    // Create words objects and add them to the list of words
+    // Find the words that are in the scripture; Split into array of words; 
+    // Creates Word objects and add them to the list of words
     public List<Word> CreateListOfWords()
     {
         string[] _splitedWords = _scriptureText.Split(" ");
@@ -30,6 +31,8 @@ public class Scripture
         return _wordsList;           
     }
 
+    // Get Random index to access a Word in the List; If the Word is not hidden, calls the HideWord method; 
+    // It should do it 3 times at a time until all Words from the list are hidden
     public List<Word> FindRandomWord()
     {
         int i = 3;
@@ -53,19 +56,21 @@ public class Scripture
 
     }
 
-    
+    // Display each Word in the list of Words content of the Scripture; And get the text rendered.
     public void DisplayScripture()
     {
-        Console.Write($"{_reference._book} {_reference._chapter}:{_reference._startVerse}-{_reference._endVerse} ");
+        Console.Write($"{_reference.GetReference()} ");
         foreach (Word item in _wordsList)
         {
-            Console.Write($"{item._wordText} ");
+            Console.Write($"{item.getWordText()} ");
         }
         Console.WriteLine("");
         Console.WriteLine("");
-        Console.WriteLine("Press ENTER to continue or type 'quit' to finish:");
+        Console.WriteLine("Press enter to continue or type 'quit' to finish:");
     }
 
+    // Creates a bool to find out if all Words in the list were already hidden; 
+    // This logic is necessary to modulate the while loop used in Program to keep running the code until all words are hidden. 
     public bool AreAllWordsHidden()
     {
         int i = 0;

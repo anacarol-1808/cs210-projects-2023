@@ -1,8 +1,10 @@
 public class Word
 {   
-    // Word - Keeps track of a single word and whether it is shown or hidden.
+    // Class Word - Keeps track of a single word and whether it is shown or hidden. 
+    // It hides words by replacing them with "_" and changing the boolean _isHidden from false to true.
+
     // attributes
-    public string _wordText;
+    private string _wordText;
     public bool _isHidden = false;
 
     // constructor
@@ -16,16 +18,16 @@ public class Word
         _wordText = wordText;
     }
 
-     public Word(string wordText, bool isHidden)
-    {
-        
-    }
-
     // methods
     public void HideWord()
     {   
         _wordText = new String('_', _wordText.Length);
         _isHidden = true;
+    }
+
+    public string GetWordText()
+    {
+        return _wordText;
     }
 
     
