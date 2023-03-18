@@ -6,14 +6,24 @@ public class Word
     public bool _isHidden = false;
 
     // constructor
+    public Word()
+    {
+
+    }
+    
     public Word(string wordText)
     {
         _wordText = wordText;
     }
 
+     public Word(string wordText, bool isHidden)
+    {
+        
+    }
+
     // methods
     public void HideWord()
-    {
+    {   
         _wordText = new String('_', _wordText.Length);
         _isHidden = true;
     }

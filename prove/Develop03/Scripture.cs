@@ -2,14 +2,14 @@ public class Scripture
 {
     // Scripture - Keeps track of the reference and the text of the scripture. Can hide words and get the rendered display of the text.
     private string _scriptureText = "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.";
-    private Reference _reference;
-    private List<Word> _wordsList = new List<Word>();
+    private Reference _reference = new Reference();
+    public List<Word> _wordsList = new List<Word>();
 
 
     // constructor here
     public Scripture()
     {
-
+        
     }
     
 
@@ -30,7 +30,7 @@ public class Scripture
         return _wordsList;           
     }
 
-    private void FindRandomWord()
+    public List<Word> FindRandomWord()
     {
         int i = 3;
 
@@ -41,14 +41,52 @@ public class Scripture
 
             if (_wordsList[randNum]._isHidden == false)
             {
-                Word isHidden = new Word(_wordsList[randNum]._wordText);
-                isHidden.HideWord();
+                _wordsList[randNum].HideWord();
                 i--;
+            
             }
             
         }
-        while (i >= 1);
+        while (AreAllWordsHidden() == false && i >= 1);
 
+        return _wordsList;
+
+    }
+
+    
+    public void DisplayScripture()
+    {
+        Console.Write($"{_reference._book} {_reference._chapter}:{_reference._startVerse}-{_reference._endVerse} ");
+        foreach (Word item in _wordsList)
+        {
+            Console.Write($"{item._wordText} ");
+        }
+        Console.WriteLine("");
+        Console.WriteLine("");
+        Console.WriteLine("Press ENTER to continue or type 'quit' to finish:");
+    }
+
+    public bool AreAllWordsHidden()
+    {
+        int i = 0;
+        int totalWords = _wordsList.Count;
+
+        foreach (Word item in _wordsList)
+        {
+            if (item._isHidden == true)
+            {
+                i++;
+            }
+        }
+
+        if (i == totalWords)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }
