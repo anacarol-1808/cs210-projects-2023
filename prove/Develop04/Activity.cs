@@ -31,21 +31,40 @@ public class Activity
         Console.WriteLine("  4. Quit");
         Console.Write("Select a choice from menu: ");
         _menuChoice = Console.ReadLine();
+
+        if (_menuChoice == "1")
+        {
+            _activityName = "Breathing";
+            _description = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
+            BreathingActivity breath = new BreathingActivity(_activityName, _description, _duration);
+            breath.BreathInAndOut();
+        }
+        else if (_menuChoice == "2")
+        {
+            _activityName = "Reflection";
+            _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+        }
+        else if (_menuChoice == "3")
+        {
+            _activityName = "Listing";
+            _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+        }
     }
 
 
-    protected void DisplayStartMessage()
+    public void DisplayStartMessage(string activityName, string description)
     {
-        Console.WriteLine($"Welcome to the {_activityName} Activity.");
-        Console.WriteLine($"{_description}");
+        _activityName = activityName;
+        _description = description;
+        Console.WriteLine($"\r\nWelcome to the {_activityName} Activity.");
+        Console.WriteLine($"\r\n{_description}"); 
     }
 
     public void DisplayEndMessage()
     {   
-        Console.WriteLine("\r\n");
-        Console.WriteLine("Well done!!");
-        Console.WriteLine("");
-        Console.WriteLine($"You have completed another {_duration} of the {_activityName}.");
+        Console.WriteLine("\r\nWell done!!");
+        Console.WriteLine($"\r\nYou have completed another {_duration} seconds of the {_activityName} Activity.");
+        PausingSpinner(5);
     }
 
     public void PausingSpinner(int duration)
@@ -89,10 +108,11 @@ public class Activity
         }
     }
 
-    public void GetActvityDuration()
+    public int GetActvityDuration()
     {
-        Console.Write("How long, in seconds, would you like for your session? ");
+        Console.Write("\r\nHow long, in seconds, would you like for your session? ");
         _duration = int.Parse(Console.ReadLine());
+        return _duration;
     }
 
 
