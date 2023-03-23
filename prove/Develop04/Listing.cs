@@ -13,7 +13,7 @@ public class ListingActivity : Activity
 
     }
 
-    public ListingActivity(string activityName, string description, int duration) : base (activityName, description, duration)
+    public ListingActivity(string activityName, string description, int duration, int activityLog) : base (activityName, description, duration, activityLog)
     {
 
     }
@@ -54,9 +54,8 @@ public class ListingActivity : Activity
 
     public void DisplayListingNumber(int listingNumber)
     {   
-        Console.WriteLine($"\r\nYou listed {listingNumber} items!");
-        Console.WriteLine("\r\nWell done!!");
-        PausingSpinner(5);
+        Console.WriteLine($"\r\nYou listed {listingNumber} items!\r\n");
+        DisplayEndMessage();
     }
 
 }

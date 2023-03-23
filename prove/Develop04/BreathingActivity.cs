@@ -8,7 +8,7 @@ public class BreathingActivity : Activity
 
     }
 
-    public BreathingActivity(string activityName, string description, int duration) : base (activityName, description, duration)
+    public BreathingActivity(string activityName, string description, int duration, int activityLog) : base (activityName, description, duration, activityLog)
     {
 
     }
@@ -34,7 +34,6 @@ public class BreathingActivity : Activity
             PausingCountDownTimer(4);
         }
         Console.WriteLine();
-
         DisplayEndMessage();
     }
 }

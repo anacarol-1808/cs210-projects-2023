@@ -21,7 +21,7 @@ public class ReflectingActivity : Activity
     {
 
     }
-    public ReflectingActivity(string activityName, string description, int duration) : base(activityName, description, duration)
+    public ReflectingActivity(string activityName, string description, int duration, int activityLog) : base(activityName, description, duration, activityLog)
     {
 
     }
@@ -76,7 +76,6 @@ public class ReflectingActivity : Activity
             }
             
         }
-
         DisplayEndMessage();
     }
 }
