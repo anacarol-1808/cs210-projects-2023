@@ -16,25 +16,25 @@ public class BreathingActivity : Activity
     //methods
     public void BreathInAndOut()
     {
-        Activity activity = new Activity();
-        activity.DisplayStartMessage(_activityName, _description);
-        int duration = activity.GetActvityDuration();
-
-        DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(duration);
+        DisplayStartMessage(_activityName, _description);
+        GetActvityDuration();
 
         Console.Clear();
         Console.WriteLine("Get ready...");
-        activity.PausingSpinner(5);
+        PausingSpinner(5);
+
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(_duration);
 
         while(DateTime.Now < endTime)
         {
             Console.Write("\r\nBreath in...");
-            activity.PausingCountDownTimer(4);
+            PausingCountDownTimer(4);
             Console.Write("\r\nNow breath out...");
-            activity.PausingCountDownTimer(4);
+            PausingCountDownTimer(4);
         }
+        Console.WriteLine();
 
-        activity.DisplayEndMessage();
+        DisplayEndMessage();
     }
 }

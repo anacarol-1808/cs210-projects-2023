@@ -41,13 +41,17 @@ public class Activity
         }
         else if (_menuChoice == "2")
         {
-            _activityName = "Reflection";
+            _activityName = "Reflecting";
             _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+            ReflectingActivity reflecting = new ReflectingActivity(_activityName, _description, _duration);
+            reflecting.GetRandomPrompt();
         }
         else if (_menuChoice == "3")
         {
             _activityName = "Listing";
             _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+            ListingActivity listing = new ListingActivity(_activityName, _description, _duration);
+            listing.GetRandomPrompt();
         }
     }
 
@@ -56,6 +60,7 @@ public class Activity
     {
         _activityName = activityName;
         _description = description;
+        Console.Clear();
         Console.WriteLine($"\r\nWelcome to the {_activityName} Activity.");
         Console.WriteLine($"\r\n{_description}"); 
     }
@@ -77,7 +82,7 @@ public class Activity
         while (DateTime.Now < endTime)
         {        
             Console.Write(_spinner[i]);
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             Console.Write("\b \b");
             i++;
 
