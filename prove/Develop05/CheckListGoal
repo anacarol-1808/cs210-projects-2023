@@ -1,0 +1,12 @@
+public class CheckListGoal : Goal
+{
+    public CheckListGoal()
+    {
+
+    }
+
+    public CheckListGoal(string goalName, string description, int points) : base (goalName, description, points)
+    {
+        
+    }
+}
