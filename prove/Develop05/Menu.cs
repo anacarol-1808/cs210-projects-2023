@@ -96,7 +96,7 @@ public class Menu
                     i++;
                     listNum++;
                     
-                }
+                } //goodbye
             }
 
             

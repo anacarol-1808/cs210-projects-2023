@@ -8,5 +8,5 @@ public class EternalGoal : Goal
     public EternalGoal(string goalName, string description, int points, string goalType) : base (goalName, description, points, goalType)
     {
         
-    }
+    } //goodbye
 }

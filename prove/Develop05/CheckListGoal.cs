@@ -36,7 +36,7 @@ public class CheckListGoal : Goal
         Console.WriteLine("What  is the bonus for accomplishing it that many times? ");
         _bonus = int.Parse(Console.ReadLine());
 
-    }
+    } //goodbye
 }
 
     

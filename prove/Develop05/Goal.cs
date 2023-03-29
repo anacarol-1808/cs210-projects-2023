@@ -38,6 +38,7 @@ public class Goal
         Console.WriteLine("What is the amount of points associated with this goal? ");
         _points = int.Parse(Console.ReadLine());
     }
+    //goodbye
 
     
 
