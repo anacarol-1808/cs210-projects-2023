@@ -1,0 +1,4 @@
+1, 1, 1, simple, False
+2, 2, 2, eternal, False
+3, 3, 3, checkList, False, 3, 0, 3
+4, 4, 4, checkList, False, 4, 0, 4
