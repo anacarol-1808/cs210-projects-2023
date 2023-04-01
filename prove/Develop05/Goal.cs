@@ -64,7 +64,7 @@ public abstract class Goal
     public abstract void LoadFromFile(string fileName, List<Goal> goals, string fileLine);
 
     
-
+    //friday night
 
 
 

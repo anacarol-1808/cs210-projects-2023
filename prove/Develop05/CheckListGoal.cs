@@ -35,8 +35,6 @@ public class CheckListGoal : Goal
         return _bonus;
     }
 
-    
-
     public override void CreateGoal()
     {
         base.CreateGoal();
@@ -67,7 +65,7 @@ public class CheckListGoal : Goal
         CheckListGoal checkList = new CheckListGoal(parts[0], parts[1], int.Parse(parts[2]), parts[3], bool.Parse(parts[4]), int.Parse(parts[5]), int.Parse(parts[6]), int.Parse(parts[7]));
         goals.Add(checkList);
         
-    }
+    }//friday night
 }
 
     

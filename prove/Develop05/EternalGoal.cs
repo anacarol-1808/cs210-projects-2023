@@ -35,5 +35,5 @@ public class EternalGoal : Goal
         EternalGoal eternal = new EternalGoal(parts[0], parts[1], int.Parse(parts[2]), parts[3], bool.Parse(parts[4]));
         goals.Add(eternal);
         
-    }
+    }// friday night
 }

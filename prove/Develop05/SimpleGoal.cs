@@ -33,6 +33,6 @@ public class SimpleGoal : Goal
         SimpleGoal simple = new SimpleGoal(parts[0], parts[1], int.Parse(parts[2]), parts[3], bool.Parse(parts[4]));
         goals.Add(simple);
         
-    }
+    }// friday night
 
 }
