@@ -1,7 +1,0 @@
-150
-4
-Simple name, Simple desc, 10, simple, True
-Eternal name, Eternal desc, 20, eternal, False
-Check name, Check desc, 30, checkList, True, 3, 3, 50
-Read the scriptures, read every day for 10 minutes, 20, eternal, False
-Brush teeth, at least 3 times a day, 10, simple, False
