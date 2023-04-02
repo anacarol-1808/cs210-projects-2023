@@ -16,7 +16,15 @@ public class SimpleGoal : Goal
 
     public override void DisplayGoal()
     {
-        Console.WriteLine($"[ ] {_goalName} ({_description})");
+        if (_isCompleted == false)
+        {
+            Console.WriteLine($"[ ] {_goalName} ({_description})");
+        }
+        else if (_isCompleted == true)
+        {
+            Console.WriteLine($"[X] {_goalName} ({_description})");
+        }
+        
     }
 
     public override void WriteToFile(string fileName)
@@ -33,6 +41,16 @@ public class SimpleGoal : Goal
         SimpleGoal simple = new SimpleGoal(parts[0], parts[1], int.Parse(parts[2]), parts[3], bool.Parse(parts[4]));
         goals.Add(simple);
         
-    }// friday night
+    }
+
+    public override void RecordEvent()
+    {
+        _isCompleted = true;
+        _totalPoints += _points;
+        _totalGoalsCompleted += 1;
+
+        Console.WriteLine($"Congratulations! You have earned {_points} points!");
+    }
+    
 
 }

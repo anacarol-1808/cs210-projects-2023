@@ -47,7 +47,14 @@ public class CheckListGoal : Goal
 
     public override void DisplayGoal()
     {
-        Console.WriteLine($"[ ] {_goalName} ({_description} -- Currently completed: {_completedTimes}/{_numOfTimes})");
+        if (_isCompleted == false)
+        {
+            Console.WriteLine($"[ ] {_goalName} ({_description} -- Currently completed: {_completedTimes}/{_numOfTimes})");
+        }
+        else if (_isCompleted == true)
+        {
+            Console.WriteLine($"[X] {_goalName} ({_description} -- Currently completed: {_completedTimes}/{_numOfTimes})");
+        }
     }
 
     public override void WriteToFile(string fileName)
@@ -65,7 +72,25 @@ public class CheckListGoal : Goal
         CheckListGoal checkList = new CheckListGoal(parts[0], parts[1], int.Parse(parts[2]), parts[3], bool.Parse(parts[4]), int.Parse(parts[5]), int.Parse(parts[6]), int.Parse(parts[7]));
         goals.Add(checkList);
         
-    }//friday night
+    }
+
+    public override void RecordEvent()
+    {
+        _totalGoalsCompleted += 1;
+        _completedTimes += 1;
+
+        if (_numOfTimes == _completedTimes)
+        {
+            _totalPoints = + _bonus + _points;
+            Console.WriteLine($"Congratulations! You have earned {_bonus} bonus points! You earned a total of {_bonus + _points} points! ");
+            _isCompleted = true;
+        }
+        else
+        {
+            _totalPoints += _points;
+            Console.WriteLine($"Congratulations! You have earned {_points} points!");
+        }
+    }
 }
 
     
