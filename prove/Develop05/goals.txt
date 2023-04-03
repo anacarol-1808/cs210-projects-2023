@@ -1,0 +1,5 @@
+70
+3
+Simple Name, simple description, 10, simple, True
+Eternal name, Eternal description, 20, eternal, False
+CheckList name, CheckList description, 30, checkList, False, 3, 2, 50
