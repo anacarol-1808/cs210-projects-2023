@@ -82,8 +82,6 @@ public abstract class Goal
     public abstract void DisplayGoal();
 
     public abstract void WriteToFile(string fileName);
-   
-    public abstract void LoadFromFile(string fileName, List<Goal> goals, string fileLine);
 
     public abstract void RecordEvent();
 

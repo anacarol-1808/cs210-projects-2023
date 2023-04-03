@@ -41,22 +41,16 @@ class Program
                 if (_goalOption == 1)
                 {
                     SimpleGoal simpleG = new SimpleGoal();
-                    simpleG.CreateGoal();
-                    simpleG.SetGoalType("simple");
                     goalList.Add(simpleG);
                 }
                 else if (_goalOption == 2)
                 {
                     EternalGoal eternalG = new EternalGoal();
-                    eternalG.CreateGoal();
-                    eternalG.SetGoalType("eternal");
                     goalList.Add(eternalG);
                 }
                 else if (_goalOption == 3)
                 {
                     CheckListGoal checkListG = new CheckListGoal();
-                    checkListG.CreateGoal();
-                    checkListG.SetGoalType("checkList");
                     goalList.Add(checkListG);
                 }
 
@@ -117,20 +111,20 @@ class Program
                     {
                         if (parts[3] == "simple")
                         {
-                            SimpleGoal simpleG = new SimpleGoal();
-                            simpleG.LoadFromFile(fileName, goalList, line);
+                            SimpleGoal simple = new SimpleGoal(parts[0], parts[1], int.Parse(parts[2]), parts[3], bool.Parse(parts[4]));
+                            goalList.Add(simple);
                         }
 
                         else if (parts[3] == "eternal")
                         {
-                            EternalGoal eternalG = new EternalGoal();
-                            eternalG.LoadFromFile(fileName, goalList, line);
+                            EternalGoal eternal = new EternalGoal(parts[0], parts[1], int.Parse(parts[2]), parts[3], bool.Parse(parts[4]));
+                            goalList.Add(eternal);
                         }
 
                         else if (parts[3] == "checkList")
                         {
-                            CheckListGoal checkListG = new CheckListGoal();
-                            checkListG.LoadFromFile(fileName, goalList, line);
+                            CheckListGoal checkList = new CheckListGoal(parts[0], parts[1], int.Parse(parts[2]), parts[3], bool.Parse(parts[4]), int.Parse(parts[5]), int.Parse(parts[6]), int.Parse(parts[7]));
+                            goalList.Add(checkList);
                         }
 
                     }                    

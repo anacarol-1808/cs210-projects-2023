@@ -5,7 +5,8 @@ public class CheckListGoal : Goal
     protected int _bonus;
     public CheckListGoal()
     {
-
+        _goalType = "checkList";
+        CreateGoal();
     }
 
     public CheckListGoal(string goalName, string description, int points, string goalType, bool isCompleted, int numbOfTimes, int completedTimes, int bonus) : base (goalName, description, points, goalType, isCompleted)
@@ -65,13 +66,6 @@ public class CheckListGoal : Goal
             outputFile.WriteLine($"{_goalName}, {_description}, {_points}, {_goalType}, {_isCompleted}, {_numOfTimes}, {_completedTimes}, {_bonus}");
             
         }
-    }
-    public override void LoadFromFile(string fileName, List<Goal> goals, string fileLine)
-    {
-        string[] parts = fileLine.Split(", ");
-        CheckListGoal checkList = new CheckListGoal(parts[0], parts[1], int.Parse(parts[2]), parts[3], bool.Parse(parts[4]), int.Parse(parts[5]), int.Parse(parts[6]), int.Parse(parts[7]));
-        goals.Add(checkList);
-        
     }
 
     public override void RecordEvent()

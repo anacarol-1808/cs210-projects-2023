@@ -2,7 +2,8 @@ public class EternalGoal : Goal
 {
     public EternalGoal()
     {
-
+        _goalType = "eternal";
+        CreateGoal();
     }
 
     public EternalGoal(string goalName, string description, int points, string goalType, bool isCompleted) : base (goalName, description, points, goalType, isCompleted)
@@ -27,14 +28,6 @@ public class EternalGoal : Goal
             outputFile.WriteLine($"{_goalName}, {_description}, {_points}, {_goalType}, {_isCompleted}");
             
         }
-    }
-
-    public override void LoadFromFile(string fileName, List<Goal> goals, string fileLine)
-    {
-        string[] parts = fileLine.Split(", ");
-        EternalGoal eternal = new EternalGoal(parts[0], parts[1], int.Parse(parts[2]), parts[3], bool.Parse(parts[4]));
-        goals.Add(eternal);
-        
     }
 
     public override void RecordEvent()

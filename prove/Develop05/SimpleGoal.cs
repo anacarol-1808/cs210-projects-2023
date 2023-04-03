@@ -2,7 +2,8 @@ public class SimpleGoal : Goal
 {
     public SimpleGoal()
     {
-
+        _goalType = "simple";
+        CreateGoal();
     }
 
     public SimpleGoal(string goalName, string description, int points, string goalType, bool isCompleted) : base (goalName, description, points, goalType, isCompleted)
@@ -33,14 +34,6 @@ public class SimpleGoal : Goal
         {
             outputFile.WriteLine($"{_goalName}, {_description}, {_points}, {_goalType}, {_isCompleted}");
         }
-    }
-
-    public override void LoadFromFile(string fileName, List<Goal> goals, string fileLine)
-    {
-        string[] parts = fileLine.Split(", ");
-        SimpleGoal simple = new SimpleGoal(parts[0], parts[1], int.Parse(parts[2]), parts[3], bool.Parse(parts[4]));
-        goals.Add(simple);
-        
     }
 
     public override void RecordEvent()
